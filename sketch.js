@@ -40,6 +40,8 @@ function draw() {
 
   drawEarth();
 
+
+
   checkCollisions(spaceship, asteroids); // function that checks collision between various elements
    
   textSize(40);
@@ -146,10 +148,12 @@ function gameOver(){
   text("Score:  " + score, width/2, height/2-10);
   noLoop();
 
-  restartButton = createButton('RESTART');
+  restartButton = createButton('TRY AGAIN');
   restartButton.position(width/2 - 90, height/2 + 30)
   restartButton.size(180,60)
   restartButton.style("font-size", "28px")
+  restartButton.style("font-weight", "bold")
+  restartButton.mousePressed(start())
 }
 
 //////////////////////////////////////////////////
