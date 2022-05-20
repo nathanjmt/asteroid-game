@@ -40,16 +40,16 @@ class Spaceship {
 
   voiceControls(speechString){
     if (speechString == "left") {
-      this.applyForce(createVector(-0.1, 0));
+      this.applyForce(createVector(-0.7, 0));
     }
     if (speechString == "right") {
-      this.applyForce(createVector(0.1, 0));
+      this.applyForce(createVector(0.7, 0));
     }
     if (speechString == "up") {
-      this.applyForce(createVector(0, -0.1));
+      this.applyForce(createVector(0, -0.2));
     }
     if (speechString == "down") {
-      this.applyForce(createVector(0, 0.1));
+      this.applyForce(createVector(0, 0.2));
     }
     if (speechString == "fire"){
       this.fire();
