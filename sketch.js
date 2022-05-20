@@ -147,7 +147,9 @@ function gameOver(){
   noLoop();
 
   restartButton = createButton('RESTART');
-  restartButton.position(width/2, height/2 + 30)
+  restartButton.position(width/2 - 90, height/2 + 30)
+  restartButton.size(180,60)
+  restartButton.style("font-size", "28px")
 }
 
 //////////////////////////////////////////////////
