@@ -145,6 +145,9 @@ function gameOver(){
   textAlign(CENTER);
   text("Score:  " + score, width/2, height/2 + 60);
   noLoop();
+
+  restartButton = createButton('RESTART');
+  restartButton.position(width/2, height/2 + 90)
 }
 
 //////////////////////////////////////////////////
