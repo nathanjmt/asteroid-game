@@ -138,16 +138,16 @@ function gameOver(){
   fill(255);
   textSize(80);
   textAlign(CENTER);
-  text("GAME OVER", width/2, height/2)
+  text("GAME OVER", width/2, height/2-70)
     
   fill(255);
   textSize(40);
   textAlign(CENTER);
-  text("Score:  " + score, width/2, height/2 + 60);
+  text("Score:  " + score, width/2, height/2-10);
   noLoop();
 
   restartButton = createButton('RESTART');
-  restartButton.position(width/2, height/2 + 90)
+  restartButton.position(width/2, height/2 + 30)
 }
 
 //////////////////////////////////////////////////
