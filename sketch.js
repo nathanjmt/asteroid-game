@@ -17,8 +17,6 @@ function setup() {
   let continuous = true;
   let interim = true;
   speechRec.start(continuous, interim);
-  //speechRec.continuous = true;
-  speechRec.interimResults = true;
 
   spaceship = new Spaceship();
   asteroids = new AsteroidSystem();
