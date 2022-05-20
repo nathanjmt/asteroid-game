@@ -21,7 +21,7 @@ function setup() {
   spaceship = new Spaceship();
   asteroids = new AsteroidSystem();
   score = 0;
- 
+
   //location and size of earth and its atmosphere
   atmosphereLoc = new createVector(width/2, height*2.9);
   atmosphereSize = new createVector(width*3, width*3);
@@ -33,8 +33,7 @@ function setup() {
 function draw() {
   background(0);
   sky();
-  
-  
+   
   spaceship.run();
   asteroids.run();
 
@@ -138,13 +137,26 @@ function gameOver(){
   fill(255);
   textSize(80);
   textAlign(CENTER);
-  text("GAME OVER", width/2, height/2)
+  text("GAME OVER", width/2, height/2-70)
     
   fill(255);
   textSize(40);
   textAlign(CENTER);
-  text("Score:  " + score, width/2, height/2 + 60);
+  text("Score:  " + score, width/2, height/2-10);
+
+
+  restartButton = createButton('TRY AGAIN');
+  restartButton.mousePressed(restart);
+  restartButton.position(width/2 - 90, height/2 + 30);
+  restartButton.size(180,60);
+  restartButton.style("font-size", "28px");
+  restartButton.style("font-weight", "bold");
+
   noLoop();
+}
+/////////////////////////////////////////////////
+function restart() {
+  window.location.reload();
 }
 
 //////////////////////////////////////////////////
