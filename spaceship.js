@@ -9,6 +9,8 @@ class Spaceship {
     this.size = 50;
   }
 
+  
+
   run(){
     this.bulletSys.run();
     this.draw();
@@ -25,7 +27,6 @@ class Spaceship {
   }
 
   move(){
-      // YOUR CODE HERE (4 lines)
       this.velocity.add(this.acceleration);
       this.location.add(this.velocity);
       this.acceleration.mult(0);
@@ -37,20 +38,35 @@ class Spaceship {
     this.acceleration.add(f);
   }
 
+  voiceControls(speechString){
+    if (speechString == "left") {
+      this.applyForce(createVector(-0.1, 0));
+    }
+    if (speechString == "right") {
+      this.applyForce(createVector(0.1, 0));
+    }
+    if (speechString == "up") {
+      this.applyForce(createVector(0, -0.1));
+    }
+    if (speechString == "down") {
+      this.applyForce(createVector(0, 0.1));
+    }
+    if (speechString == "fire"){
+      this.fire();
+    }
+  }
+
   interaction(){
       if (keyIsDown(LEFT_ARROW)){
         this.applyForce(createVector(-0.1, 0));
       }
       if (keyIsDown(RIGHT_ARROW)){
-      // YOUR CODE HERE (1 line)
           this.applyForce(createVector(0.1, 0));
       }
       if (keyIsDown(UP_ARROW)){
-      // YOUR CODE HERE (1 line)
           this.applyForce(createVector(0, -0.1));
       }
       if (keyIsDown(DOWN_ARROW)){
-      // YOUR CODE HERE (1 line)
           this.applyForce(createVector(0, 0.1));
       }
   }
@@ -67,7 +83,6 @@ class Spaceship {
   }
 
   setNearEarth(){
-    //YOUR CODE HERE (6 lines approx)
       var grav = createVector(0,0.05);
       this.applyForce(grav);
       
