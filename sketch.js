@@ -6,15 +6,22 @@ var earthLoc;
 var earthSize;
 var starLocs = [];
 var score;
+var speechRec;
 
 //////////////////////////////////////////////////
 function setup() {
   createCanvas(1200,800);
+
+  //set up speech rec
+  speechRec = new p5.SpeechRec('en-US', parseSpeech);
+  speechRec.start()
+  speechRec.continuous = true;
+  speechRec.intermResults = true;
+
   spaceship = new Spaceship();
   asteroids = new AsteroidSystem();
   score = 0;
-  
-
+ 
   //location and size of earth and its atmosphere
   atmosphereLoc = new createVector(width/2, height*2.9);
   atmosphereSize = new createVector(width*3, width*3);
@@ -107,6 +114,15 @@ function isInside(locA, sizeA, locB, sizeB){
         return false;
     }
     
+}
+
+///////////////////////////////////////////////////////////
+function parseSpeech() 
+{
+  var latestWord = speechRec.resultString.split(' ').pop();
+  spaceship.voiceControls(latestWord);
+
+  console.log(speechRec.resultString);
 }
 
 //////////////////////////////////////////////////
