@@ -14,9 +14,11 @@ function setup() {
 
   //set up speech rec
   speechRec = new p5.SpeechRec('en-US', parseSpeech);
-  speechRec.start()
-  speechRec.continuous = true;
-  speechRec.intermResults = true;
+  let continuous = true;
+  let interim = true;
+  speechRec.start(continuous, interim);
+  //speechRec.continuous = true;
+  speechRec.interimResults = true;
 
   spaceship = new Spaceship();
   asteroids = new AsteroidSystem();
@@ -28,6 +30,7 @@ function setup() {
   earthLoc = new createVector(width/2, height*3.1);
   earthSize = new createVector(width*3, width*3);
 }
+
 
 //////////////////////////////////////////////////
 function draw() {
